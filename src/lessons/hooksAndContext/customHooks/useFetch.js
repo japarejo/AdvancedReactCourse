@@ -6,6 +6,7 @@ function useFetch(url) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    console.log("Fetch URL:", url);
     let cancelado = false;
     setLoading(true);
     fetch(url)
