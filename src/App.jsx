@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import AppRoutes from './routes.jsx'
+import NavBar from './components/NavBar.jsx'
 
 function App() {
   return (
@@ -16,10 +16,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React Router</h1>
-      <nav style={{ marginBottom: 16 }}>
-        <Link to="/" style={{ marginRight: 12 }}>Home</Link>
-        <Link to="/about">About</Link>
-      </nav>
+      <NavBar />
       <AppRoutes />
     </>
   )
