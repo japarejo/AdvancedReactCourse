@@ -23,6 +23,12 @@ export default function NavBar() {
           <Link to="/lessons/hooksAndcontext/reducer">Ejemplo de reducers</Link>
         </div>
       </details>
+      <details>
+        <summary>Patrones</summary>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 8 }}>
+          <Link to="/lessons/designPatterns/slice">Slice modular</Link>
+        </div>
+      </details>
       <Link to="/about">About</Link>
     </nav>
   )

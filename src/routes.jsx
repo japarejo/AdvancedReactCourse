@@ -9,6 +9,7 @@ import ListaPersonajesSW from './lessons/hooksAndContext/reactQuery/ListaPersona
 import EjemploContextoUsuario from './lessons/hooksAndContext/context/EjemploContextoUsuario.jsx'
 import EjemploUseCallback from './lessons/hooksAndContext/useCallback.jsx'
 import EjemploUseReducerStarWars from './lessons/hooksAndContext/useReducer/EjemploUseReducerStarWars.jsx'
+import CheckoutSliceExample from './lessons/designPatterns/Slice/CheckoutSliceExample.jsx'
 export default function AppRoutes() {
   return (
     <Routes>
@@ -24,6 +25,7 @@ export default function AppRoutes() {
       <Route path="/lessons/reactQuery/starwars" element={<ListaPersonajesSW />} />
       <Route path="/lessons/hooksAndcontext/context" element={<EjemploContextoUsuario />} />      
       <Route path="/lessons/hooksAndcontext/reducer" element={<EjemploUseReducerStarWars />} />      
+      <Route path="/lessons/designPatterns/slice" element={<CheckoutSliceExample />} />
       <Route path="*" element={<p style={{ color: 'tomato' }}>Not found</p>} />
     </Routes>
   )
