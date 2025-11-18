@@ -10,6 +10,7 @@ import EjemploContextoUsuario from './lessons/hooksAndContext/context/EjemploCon
 import EjemploUseCallback from './lessons/hooksAndContext/useCallback.jsx'
 import EjemploUseReducerStarWars from './lessons/hooksAndContext/useReducer/EjemploUseReducerStarWars.jsx'
 import CheckoutSliceExample from './lessons/designPatterns/Slice/CheckoutSliceExample.jsx'
+import RenderPropsExample from './lessons/designPatterns/renderProps/RenderPropsExample.jsx'
 export default function AppRoutes() {
   return (
     <Routes>
@@ -26,6 +27,7 @@ export default function AppRoutes() {
       <Route path="/lessons/hooksAndcontext/context" element={<EjemploContextoUsuario />} />      
       <Route path="/lessons/hooksAndcontext/reducer" element={<EjemploUseReducerStarWars />} />      
       <Route path="/lessons/designPatterns/slice" element={<CheckoutSliceExample />} />
+      <Route path="/lessons/designPatterns/renderProps" element={<RenderPropsExample />} />
       <Route path="*" element={<p style={{ color: 'tomato' }}>Not found</p>} />
     </Routes>
   )

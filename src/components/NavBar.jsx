@@ -27,6 +27,7 @@ export default function NavBar() {
         <summary>Patrones</summary>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, marginTop: 8 }}>
           <Link to="/lessons/designPatterns/slice">Slice modular</Link>
+          <Link to="/lessons/designPatterns/renderProps">Render props</Link>
         </div>
       </details>
       <Link to="/about">About</Link>

@@ -1,3 +1,4 @@
+/* eslint-env vitest */
 import { render, screen, fireEvent } from "@testing-library/react";
 import Counter from "./counter.jsx";
 
