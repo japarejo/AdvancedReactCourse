@@ -1,8 +1,9 @@
 import { useState } from "react";
-import useFetch  from "./useFetch";
+import useFetch from "./useFetch";
 
 export default function ListaPersonajesStarWars() {
   const [page, setPage] = useState(1);
+  const [showMass, setShowMass] = useState(false);
 
   const { data, loading, error } = useFetch(
     `https://swapi.dev/api/people/?page=${page}`
@@ -22,6 +23,10 @@ export default function ListaPersonajesStarWars() {
     }
   };
 
+  const toggleShowMass = () => {
+    setShowMass((prev) => !prev);
+  };
+
   if (loading) {
     return <p>Cargando personajes de Star Wars...</p>;
   }
@@ -39,9 +44,8 @@ export default function ListaPersonajesStarWars() {
         {personajes.map((personaje) => (
           <li key={personaje.url}>
             <strong>{personaje.name}</strong> —{" "}
-            <span>
-              Altura: {personaje.height} cm, Masa: {personaje.mass} kg
-            </span>
+            <span>Altura: {personaje.height} cm</span>
+            {showMass && <span> — Masa: {personaje.mass} kg</span>}
           </li>
         ))}
       </ul>
@@ -52,6 +56,9 @@ export default function ListaPersonajesStarWars() {
         </button>
         <button onClick={handleNext} disabled={!data?.next}>
           Siguiente
+        </button>
+        <button onClick={toggleShowMass}>
+          {showMass ? "Ocultar peso" : "Mostrar peso"}
         </button>
       </div>
     </div>
