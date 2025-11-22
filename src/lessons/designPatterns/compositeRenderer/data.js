@@ -39,7 +39,7 @@ export const missionPlan = [
           {
             id: "task-1",
             type: "task",
-            descripcion: "Proteger al líder durante la corrida final",
+            descripcion: "Proteger al líder durante la fase final del ataque",
             prioridad: "alta",
           },
         ],
