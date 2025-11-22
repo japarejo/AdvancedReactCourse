@@ -1,10 +1,14 @@
-// Reducer y estado inicial para gestionar el Consejo Jedi
+// Reducer y estado inicial para gestionar el Consejo Jedi.
+// Las acciones son objetos con { type, payload } y el reducer es siempre puro.
 
 export const estadoInicial = [
   { id: 1, nombre: "Luke Skywalker", ladoOscuro: false },
   { id: 2, nombre: "Darth Vader", ladoOscuro: true },
 ];
 
+// Patrones didacticos:
+// - No mutar el estado: siempre devolvemos nuevas referencias.
+// - Cada case hace una sola cosa y devuelve el nuevo estado.
 export function jedisReducer(state, action) {
   switch (action.type) {
     case "agregar": {
@@ -22,9 +26,7 @@ export function jedisReducer(state, action) {
     case "cambiarLado": {
       const id = action.payload?.id;
       return state.map((jedi) =>
-        jedi.id === id
-          ? { ...jedi, ladoOscuro: !jedi.ladoOscuro }
-          : jedi
+        jedi.id === id ? { ...jedi, ladoOscuro: !jedi.ladoOscuro } : jedi
       );
     }
 

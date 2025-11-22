@@ -1,10 +1,11 @@
 import JediListItem from "./JediListItem";
 
+// Lista declarativa que recibe estado y callbacks (acciones) desde el padre.
 export default function JediList({ jedis, onCambiarLado, onEliminar }) {
   if (!jedis.length) {
     return (
       <p style={{ textAlign: "center", color: "#666" }}>
-        El consejo está vacío. La Fuerza espera a nuevos aprendices.
+        El consejo esta vacio. La Fuerza espera a nuevos aprendices.
       </p>
     );
   }

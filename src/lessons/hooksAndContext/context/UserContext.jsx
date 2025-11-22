@@ -1,7 +1,10 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useMemo, useState } from "react";
 
+// Contexto centralizado para identidad de usuario y acciones (login/logout/cambiar lado).
 const UserContext = createContext(null);
 
+// Custom hook con error claro si falta el provider.
+// eslint-disable-next-line react-refresh/only-export-components
 export function useUser() {
   const ctx = useContext(UserContext);
   if (!ctx) {
@@ -10,23 +13,32 @@ export function useUser() {
   return ctx;
 }
 
+// Proveedor que mantiene el estado global de usuario y expone acciones.
 export function UserProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  function login(name, role) {
-    // Por defecto todo usuario empieza en el Lado Luminoso ;-P
-    setUser({ name, role, forceSide: 'light' });
-  }
+  const login = useCallback((name, role) => {
+    setUser({ name, role, forceSide: "light" });
+  }, []);
 
-  function logout() {
+  const logout = useCallback(() => {
     setUser(null);
-  }
+  }, []);
 
-  function setForceSide(side) {
-    setUser((prev) => (prev ? { ...prev, forceSide: side } : prev));
-  }
+  // Este es el setForceSide correcto: al cambiar de lado, también ajusta el rol.
+  // Dark -> Sith, Light -> Jedi.
+  const setForceSide = useCallback((side) => {
+    setUser((prev) => {
+      if (!prev) return prev;
+      const nextRole = side === "dark" ? "Sith" : "Jedi";
+      return { ...prev, forceSide: side, role: nextRole };
+    });
+  }, []);
 
-  const value = { user, isAuthenticated: !!user, login, logout, setForceSide };
+  const value = useMemo(
+    () => ({ user, isAuthenticated: !!user, login, logout, setForceSide }),
+    [user, login, logout, setForceSide]
+  );
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }

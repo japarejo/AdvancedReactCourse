@@ -11,6 +11,11 @@ import EjemploUseCallback from "./lessons/hooksAndContext/useCallback.jsx";
 import EjemploUseReducerStarWars from "./lessons/hooksAndContext/useReducer/EjemploUseReducerStarWars.jsx";
 import CheckoutSliceExample from "./lessons/designPatterns/Slice/CheckoutSliceExample.jsx";
 import RenderPropsExample from "./lessons/designPatterns/renderProps/RenderPropsExample.jsx";
+import EjemploContainerPresentational from "./lessons/designPatterns/containerPresentational/EjemploContainerPresentational.jsx";
+import CompositeRendererExample from "./lessons/designPatterns/CompositeRenderer/CompositeRendererExample.jsx";
+import CompositeRendererExercise from "./lessons/designPatterns/CompositeRenderer/CompositeRendererExercise.jsx";
+import HolocronSearchHeadlessExample from "./lessons/designPatterns/HeadlessComponent/HolocronSearchHeadlessExample.jsx";
+import CompoundComponentExample from "./lessons/designPatterns/compoundComponent/CompoundComponentExample.jsx";
 export default function AppRoutes() {
   return (
     <Routes>
@@ -57,6 +62,26 @@ export default function AppRoutes() {
       <Route
         path="/lessons/designPatterns/renderProps"
         element={<RenderPropsExample />}
+      />
+      <Route
+        path="/lessons/designPatterns/container-presentational"
+        element={<EjemploContainerPresentational />}
+      />
+      <Route
+        path="/lessons/designPatterns/composite-renderer"
+        element={<CompositeRendererExample />}
+      />
+      <Route
+        path="/lessons/designPatterns/composite-renderer/exercise"
+        element={<CompositeRendererExercise />}
+      />
+      <Route
+        path="/lessons/designPatterns/headless-component"
+        element={<HolocronSearchHeadlessExample />}
+      />
+      <Route
+        path="/lessons/designPatterns/compound-component"
+        element={<CompoundComponentExample />}
       />
       <Route path="*" element={<p style={{ color: "tomato" }}>Not found</p>} />
     </Routes>

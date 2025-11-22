@@ -1,8 +1,8 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import AppRoutes from './routes.jsx'
-import NavBar from './components/NavBar.jsx'
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import AppRoutes from "./routes.jsx";
+import NavBar from "./components/NavBar.jsx";
 
 function App() {
   return (
@@ -18,8 +18,9 @@ function App() {
       <h1>Vite + React + React Router + React Query </h1>
       <NavBar />
       <AppRoutes />
+      <div>All copyright reserved!</div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

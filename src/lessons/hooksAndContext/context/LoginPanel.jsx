@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useUser } from "./UserContext";
 
+// Pequeño formulario de acceso: al enviar, invoca login() del contexto
+// y el resto de la app reacciona automáticamente al cambio de estado global.
 export default function LoginPanel() {
   const { login } = useUser();
   const [name, setName] = useState("Luke Skywalker");

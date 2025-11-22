@@ -3,9 +3,14 @@ import { jedisReducer, estadoInicial } from "./jedisReducer";
 import JediForm from "./JediForm";
 import JediList from "./JediList";
 
+// Ejemplo completo de useReducer:
+// - estadoInicial: array de jedis
+// - reducer: funciones puras que modifican el estado segun action.type
+// - dispatch: se pasa a hijos para que envien acciones sin mutar el estado
 export default function EjemploUseReducerStarWars() {
   const [jedis, dispatch] = useReducer(jedisReducer, estadoInicial);
 
+  // Action creators sencillos para facilitar la construcción de eventos { type, payload }
   const agregarJedi = (nombre) => {
     dispatch({ type: "agregar", payload: { nombre } });
   };
@@ -27,9 +32,9 @@ export default function EjemploUseReducerStarWars() {
         margin: "auto",
       }}
     >
-      <h2>🧘‍♂️ Consejo Jedi (useReducer)</h2>
+      <h2>Consejo Jedi (useReducer)</h2>
       <p style={{ color: "#555" }}>
-        Ejemplo de gestión de estado compleja con useReducer en el universo Star Wars.
+        Ejemplo de gestion de estado con useReducer en el universo Star Wars.
       </p>
 
       <JediForm onAgregar={agregarJedi} />

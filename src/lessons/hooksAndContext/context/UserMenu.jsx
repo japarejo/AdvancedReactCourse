@@ -1,5 +1,7 @@
 import { useUser } from "./UserContext";
 
+// Cabecera compacta que refleja el estado global del usuario
+// y permite cerrar sesión desde cualquier parte del layout.
 export default function UserMenu() {
   const { user, isAuthenticated, logout } = useUser();
 

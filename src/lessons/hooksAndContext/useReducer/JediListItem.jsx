@@ -1,3 +1,4 @@
+// Item presentacional: recibe callbacks ya creados y no conoce el reducer.
 export default function JediListItem({ jedi, onCambiarLado, onEliminar }) {
   const fondo = jedi.ladoOscuro ? "#2b2b2b" : "#e6f0ff";
   const colorTexto = jedi.ladoOscuro ? "#fff" : "#000";
@@ -16,12 +17,12 @@ export default function JediListItem({ jedi, onCambiarLado, onEliminar }) {
       }}
     >
       <span>
-        <strong>{jedi.nombre}</strong> —{" "}
-        {jedi.ladoOscuro ? "Lado Oscuro 🌑" : "Lado Luminoso ✨"}
+        <strong>{jedi.nombre}</strong> -{" "}
+        {jedi.ladoOscuro ? "Lado Oscuro" : "Lado Luminoso"}
       </span>
       <div style={{ display: "flex", gap: "0.5rem" }}>
         <button onClick={() => onCambiarLado(jedi.id)}>Cambiar lado</button>
-        <button onClick={() => onEliminar(jedi.id)}>❌</button>
+        <button onClick={() => onEliminar(jedi.id)}>Eliminar</button>
       </div>
     </li>
   );

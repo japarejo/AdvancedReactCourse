@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// Formulario controlado que emite una accion de agregar via callback del padre.
 export default function JediForm({ onAgregar }) {
   const [nombre, setNombre] = useState("");
 
