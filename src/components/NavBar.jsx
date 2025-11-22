@@ -52,8 +52,11 @@ export default function NavBar() {
           <Link to="/lessons/designPatterns/container-presentational">
             Container/Presentational
           </Link>
-          <Link to="/lessons/designPatterns/slice">Slice modular</Link>
           <Link to="/lessons/designPatterns/renderProps">Render props</Link>
+          <Link to="/lessons/designPatterns/compound-component">
+            Compound Component
+          </Link>
+          <Link to="/lessons/designPatterns/slice">Slice modular</Link>
           <Link to="/lessons/designPatterns/composite-renderer">
             Composite Renderer
           </Link>
@@ -62,9 +65,6 @@ export default function NavBar() {
           </Link>
           <Link to="/lessons/designPatterns/headless-component">
             Headless Component
-          </Link>
-          <Link to="/lessons/designPatterns/compound-component">
-            Compound Component
           </Link>
         </div>
       </details>
