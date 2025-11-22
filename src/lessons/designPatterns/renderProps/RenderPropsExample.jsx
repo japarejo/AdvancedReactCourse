@@ -165,16 +165,22 @@ function PointerSpotlight({ x, y, width, height }) {
   );
 }
 
+/**
+ * Demonstrates the Render Props pattern.
+ *
+ * The `DataFetcher` component handles the logic of fetching data (simulated here)
+ * and exposes the state (loading, error, data) to its children via a function prop.
+ * This allows the parent component to decide how to render the data.
+ */
 export default function RenderPropsExample() {
   return (
-    <section
-      style={{
-        padding: "2rem 1rem 3rem",
-        display: "flex",
-        flexDirection: "column",
-        gap: "2rem",
-      }}
-    >
+    <div className="box">
+      <h3>Patrón Render Props</h3>
+      <p>
+        El componente <code>DataFetcher</code> encapsula la lógica de carga de
+        datos y expone el estado a través de una prop llamada{" "}
+        <code>render</code> (o <code>children</code> como función).
+      </p>
       <header style={{ maxWidth: 640 }}>
         <p
           style={{
@@ -214,6 +220,6 @@ export default function RenderPropsExample() {
           render={(position) => <PointerSpotlight {...position} />}
         />
       </div>
-    </section>
+    </div>
   );
 }

@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
+/**
+ * Main navigation component for the application.
+ * Contains links to all lessons and examples, organized by category using HTML details/summary elements.
+ */
 export default function NavBar() {
-  // Cierra el <details> al perder foco fuera del componente.
+  /**
+   * Handles the blur event on the details element to close the dropdown
+   * when the user clicks outside of it.
+   *
+   * @param {React.FocusEvent} event - The focus event triggered on blur.
+   */
   const handleDetailsBlur = (event) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       event.currentTarget.open = false;

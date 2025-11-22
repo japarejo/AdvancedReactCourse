@@ -1,17 +1,59 @@
-# Advanced react courseReact 
+# Advanced React Course
 
-This project uses React working in Vite with HMR and some ESLint rules.
+This project is a comprehensive resource for learning advanced React concepts, including Design Patterns, Custom Hooks, Performance Optimization, and Refactoring techniques. It uses React with Vite, HMR, and configured ESLint rules.
 
-## Routing
+## 📚 Course Structure
 
-This project is configured with React Router.
+The content is organized into the `src/lessons` directory, covering the following main topics:
 
-- Install dependencies: `npm install`
-- Start the dev server: `npm run dev`
+- **Design Patterns** (`src/lessons/designPatterns`):
+  - Container/Presentational
+  - Render Props
+  - Compound Components
+  - Control Props
+  - Hooks Factory
+  - And more...
 
-Routes available by default:
-- `/` → Home
-- `/about` → About
+- **Hooks & Context** (`src/lessons/hooksAndContext`):
+  - Deep dive into `useMemo`, `useCallback`, `useReducer`
+  - Custom Hooks creation
+  - Context API best practices
+  - React Query integration
+
+- **Refactoring** (`src/lessons/refactorings`):
+  - Real-world examples of refactoring legacy code to modern React patterns.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or higher recommended)
+- npm or yarn
+
+### Installation & Running
+
+1.  **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+2.  **Start the development server:**
+
+    ```bash
+    npm run dev
+    ```
+
+3.  **Open the application:**
+    The server usually starts at `http://localhost:5173`.
+
+## 🧭 Navigation
+
+The application uses **React Router** for navigation.
+
+- `/` → **Home**: Landing page.
+- `/about` → **About**: Project information.
+- **Navigation Bar**: Use the top navigation bar to access specific lessons and examples grouped by category.
 
 ## React Compiler Deactivated
 

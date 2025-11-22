@@ -1,5 +1,12 @@
 import { useMemo, useState } from "react";
 
+/**
+ * Demonstrates the usage of the `useMemo` hook to optimize expensive calculations.
+ *
+ * In this example, a Fibonacci calculation (simulated as expensive) is memoized
+ * so that it only re-runs when the `numero` state changes, and not when
+ * other unrelated state (like `contador`) updates.
+ */
 export default function EjemploUseMemo() {
   const [numero, setNumero] = useState(30);
   const [contador, setContador] = useState(0);
