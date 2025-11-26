@@ -35,11 +35,6 @@ function MouseTracker({ label, render }) {
     }));
   };
 
-  if (typeof render !== "function") {
-    console.error("MouseTracker espera una prop `render` que sea una función.");
-    return null;
-  }
-
   return (
     <article
       style={{
@@ -78,7 +73,7 @@ function MouseTracker({ label, render }) {
           overflow: "hidden",
         }}
       >
-        {render(position)}
+        {render.map((item) => item(position))}
       </div>
     </article>
   );
@@ -88,7 +83,7 @@ function CoordinatesReadout({ x, y }) {
   return (
     <div
       style={{
-        position: "absolute",
+        position: "relative",
         inset: 0,
         display: "flex",
         flexDirection: "column",
@@ -119,7 +114,7 @@ function PointerSpotlight({ x, y, width, height }) {
     <>
       <div
         style={{
-          position: "absolute",
+          position: "relative",
           inset: 0,
           background: hasMoved
             ? `radial-gradient(circle at ${horizontal}% ${vertical}%, rgba(59, 130, 246, 0.25), transparent 70%)`
@@ -212,12 +207,15 @@ export default function RenderPropsExample() {
       >
         <MouseTracker
           label="Lectura directa"
-          render={(position) => <CoordinatesReadout {...position} />}
+          render={[
+            (position) => <CoordinatesReadout {...position} key="coord" />,
+            (position) => <PointerSpotlight {...position} key="rel" />,
+          ]}
         />
 
         <MouseTracker
           label="Resaltado visual"
-          render={(position) => <PointerSpotlight {...position} />}
+          render={[(position) => <PointerSpotlight {...position} />]}
         />
       </div>
     </div>

@@ -15,6 +15,7 @@ import EjemploContainerPresentational from "./lessons/designPatterns/containerPr
 import CompositeRendererExample from "./lessons/designPatterns/compositeRenderer/CompositeRendererExample.jsx";
 import CompositeRendererExercise from "./lessons/designPatterns/compositeRenderer/CompositeRendererExercise.jsx";
 import HolocronSearchHeadlessExample from "./lessons/designPatterns/headlessComponent/HolocronSearchHeadlessExample.jsx";
+import CompoundComponentExample from "./lessons/designPatterns/compoundComponent/CompoundComponentExample.jsx";
 export default function AppRoutes() {
   return (
     <Routes>
@@ -77,6 +78,10 @@ export default function AppRoutes() {
       <Route
         path="/lessons/designPatterns/headless-component"
         element={<HolocronSearchHeadlessExample />}
+      />
+      <Route
+        path="/lessons/designPatterns/compound-component"
+        element={<CompoundComponentExample />}
       />
       <Route path="*" element={<p style={{ color: "tomato" }}>Not found</p>} />
     </Routes>
