@@ -7,6 +7,7 @@ const registry = {
   pilot: PilotBadge,
   task: TaskItem,
   intel: IntelNote,
+  support: SupportCharacters,
 };
 
 // API publica: recibe un nodo, busca su renderer y lo pinta con renderChildren.
@@ -101,19 +102,33 @@ function IntelNote({ node }) {
   return (
     <div style={cardStyle("#f0f9ff")}>
       <p style={eyebrow}>Inteligencia</p>
-      <p style={{ margin: 0, color: "#0f172a" }}>
+      <p style={{ margin: 0, color: "#ff0000ff" }}>
         Fuente: <strong>{node.fuente}</strong>
       </p>
-      <p style={{ margin: "0.35rem 0 0 0", color: "#1f2937" }}>
+      <p style={{ margin: "0.35rem 0 0 0", color: "#c82e03ff" }}>
         {node.detalle}
       </p>
     </div>
   );
 }
 
+function SupportCharacters({ node, children }) {
+  return (
+    <div style={cardStyle("#e0f2fe")}>
+      <p style={eyebrow}>Personajes de apoyo</p>
+      <ul style={{ margin: 0, paddingLeft: "1.25rem", color: "#1e293b" }}>
+        {node.recursos.map((char) => (
+          <li key={char}>{char}</li>
+        ))}
+      </ul>
+      {children && <div style={{ marginTop: "0.75rem" }}>{children}</div>}
+    </div>
+  );
+}
+
 function UnknownNode({ node }) {
   return (
-    <div style={cardStyle("#fee2e2")}>
+    <div style={cardStyle("#f5a5a5ff")}>
       <p style={eyebrow}>Tipo no registrado</p>
       <code>{node.type}</code>
     </div>

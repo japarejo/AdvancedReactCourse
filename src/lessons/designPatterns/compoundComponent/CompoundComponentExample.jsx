@@ -39,6 +39,7 @@ export default function CompoundComponentExample() {
             <ForceToggle.Icon />
             <ForceToggle.Title />
           </div>
+          <ForceToggle.Image />
           <ForceToggle.Badge />
           <ForceToggle.Stats />
           <ForceToggle.Message
@@ -62,6 +63,19 @@ export default function CompoundComponentExample() {
           <ForceToggle.Switch />
           <ForceToggle.Actions />
         </div>
+      </ForceToggle>
+
+      <ForceToggle>
+        <ForceToggle.Title>Yoda</ForceToggle.Title>
+        <ForceToggle.Image />
+        <ForceToggle.Switch />
+        <ForceToggle.Customizer>
+          <div
+            style={{ marginTop: "1rem", fontStyle: "italic", color: "#374151" }}
+          >
+            "Hazlo o no lo hagas, pero no lo intentes."
+          </div>
+        </ForceToggle.Customizer>
       </ForceToggle>
     </div>
   );

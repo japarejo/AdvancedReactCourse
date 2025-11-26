@@ -83,7 +83,7 @@ function CoordinatesReadout({ x, y }) {
   return (
     <div
       style={{
-        position: "relative",
+        position: "absolute",
         inset: 0,
         display: "flex",
         flexDirection: "column",
@@ -105,6 +105,44 @@ function CoordinatesReadout({ x, y }) {
   );
 }
 
+function JuegoEncuentraLaPosicion({ x, y, width, height }) {
+  const objetivoX = Math.round(width * 0.75);
+  const objetivoY = Math.round(height * 0.25);
+  const deltaX = Math.abs(x - objetivoX);
+  const deltaY = Math.abs(y - objetivoY);
+  const distancia = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+  return (
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 12,
+        fontSize: 18,
+        color: "#2d3748",
+      }}
+    >
+      {distancia < 20 ? (
+        <strong style={{ fontSize: 24, color: "#38a169" }}>
+          ¡Felicidades! Has encontrado la posición objetivo.
+        </strong>
+      ) : (
+        <>
+          <p style={{ margin: 0 }}>
+            Encuentra la posición objetivo en ({objetivoX}px, {objetivoY}px)
+          </p>
+          <p style={{ margin: 0, color: "#718096", fontSize: 14 }}>
+            Estás a {Math.round(distancia)}px de distancia
+          </p>
+        </>
+      )}
+    </div>
+  );
+}
+
 function PointerSpotlight({ x, y, width, height }) {
   const hasMoved = width > 0 && height > 0 && (x !== 0 || y !== 0);
   const horizontal = width ? Math.round((x / width) * 100) : 0;
@@ -114,7 +152,7 @@ function PointerSpotlight({ x, y, width, height }) {
     <>
       <div
         style={{
-          position: "relative",
+          position: "absolute",
           inset: 0,
           background: hasMoved
             ? `radial-gradient(circle at ${horizontal}% ${vertical}%, rgba(59, 130, 246, 0.25), transparent 70%)`
@@ -216,6 +254,11 @@ export default function RenderPropsExample() {
         <MouseTracker
           label="Resaltado visual"
           render={[(position) => <PointerSpotlight {...position} />]}
+        />
+
+        <MouseTracker
+          label="Busca el tesoro"
+          render={[(position) => <JuegoEncuentraLaPosicion {...position} />]}
         />
       </div>
     </div>

@@ -9,7 +9,9 @@ test("incrementa el contador al hacer clic", () => {
   const label = screen.getByText(/Contador/i);
 
   fireEvent.click(button);
+
   expect(label).toHaveTextContent("Contador: 1");
   fireEvent.click(button);
-  expect(label).toHaveTextContent("Contador: 2");
+  fireEvent.click(button);
+  expect(label).toHaveTextContent("Contador: 3");
 });
