@@ -35,6 +35,16 @@ export function jedisReducer(state, action) {
       return state.filter((jedi) => jedi.id !== id);
     }
 
+    case "rebautizar": {
+      const id = action.payload?.id;
+      const nombre = action.payload?.nombre ?? "";
+      if (!nombre.trim()) return state;
+
+      return state.map((jedi) =>
+        jedi.id === id ? { ...jedi, nombre: nombre.trim() } : jedi
+      );
+    }
+
     default:
       return state;
   }

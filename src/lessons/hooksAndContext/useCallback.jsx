@@ -16,11 +16,15 @@ export default function EjemploUseCallback() {
 
   // La función 'incrementar' se mantiene estable entre renders:
   const incrementar = useCallback(() => {
+    console.log("Incrementando contador");
     setContador((c) => c + 1);
   }, []);
 
   // Esta función cambia en cada render::
-  const cambiarValor = () => setValor((v) => v + 1);
+  const cambiarValor = () => {
+    console.log("Incrementando valor");
+    setValor((v) => v + 1);
+  };
 
   console.log("Renderizando <EjemploUseCallback>");
 

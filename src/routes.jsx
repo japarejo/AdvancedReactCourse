@@ -12,10 +12,9 @@ import EjemploUseReducerStarWars from "./lessons/hooksAndContext/useReducer/Ejem
 import CheckoutSliceExample from "./lessons/designPatterns/Slice/CheckoutSliceExample.jsx";
 import RenderPropsExample from "./lessons/designPatterns/renderProps/RenderPropsExample.jsx";
 import EjemploContainerPresentational from "./lessons/designPatterns/containerPresentational/EjemploContainerPresentational.jsx";
-import CompositeRendererExample from "./lessons/designPatterns/CompositeRenderer/CompositeRendererExample.jsx";
-import CompositeRendererExercise from "./lessons/designPatterns/CompositeRenderer/CompositeRendererExercise.jsx";
-import HolocronSearchHeadlessExample from "./lessons/designPatterns/HeadlessComponent/HolocronSearchHeadlessExample.jsx";
-import CompoundComponentExample from "./lessons/designPatterns/compoundComponent/CompoundComponentExample.jsx";
+import CompositeRendererExample from "./lessons/designPatterns/compositeRenderer/CompositeRendererExample.jsx";
+import CompositeRendererExercise from "./lessons/designPatterns/compositeRenderer/CompositeRendererExercise.jsx";
+import HolocronSearchHeadlessExample from "./lessons/designPatterns/headlessComponent/HolocronSearchHeadlessExample.jsx";
 export default function AppRoutes() {
   return (
     <Routes>
@@ -78,10 +77,6 @@ export default function AppRoutes() {
       <Route
         path="/lessons/designPatterns/headless-component"
         element={<HolocronSearchHeadlessExample />}
-      />
-      <Route
-        path="/lessons/designPatterns/compound-component"
-        element={<CompoundComponentExample />}
       />
       <Route path="*" element={<p style={{ color: "tomato" }}>Not found</p>} />
     </Routes>

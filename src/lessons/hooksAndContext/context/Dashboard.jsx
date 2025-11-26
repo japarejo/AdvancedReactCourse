@@ -3,7 +3,7 @@ import { useUser } from "./UserContext";
 // Pantalla privada: consume el contexto para leer al usuario actual
 // y para actualizar su "lado" sin prop drilling.
 export default function Dashboard() {
-  const { user, setForceSide: changeForceSide } = useUser();
+  const { user, setForceSide: changeForceSide, setUser } = useUser();
 
   return (
     <section>
@@ -27,6 +27,11 @@ export default function Dashboard() {
         </button>
         <button onClick={() => changeForceSide("light")}>
           Volver al Lado Luminoso
+        </button>
+        <button
+          onClick={() => setUser({ ...user, edad: 30, planeta: "Tatooine" })}
+        >
+          Añadir información adicional
         </button>
       </div>
     </section>

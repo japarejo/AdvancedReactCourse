@@ -1,7 +1,12 @@
 import JediListItem from "./JediListItem";
 
 // Lista declarativa que recibe estado y callbacks (acciones) desde el padre.
-export default function JediList({ jedis, onCambiarLado, onEliminar }) {
+export default function JediList({
+  jedis,
+  onCambiarLado,
+  onEliminar,
+  rebautizar,
+}) {
   if (!jedis.length) {
     return (
       <p style={{ textAlign: "center", color: "#666" }}>
@@ -18,6 +23,7 @@ export default function JediList({ jedis, onCambiarLado, onEliminar }) {
           jedi={jedi}
           onCambiarLado={onCambiarLado}
           onEliminar={onEliminar}
+          onRebautizar={rebautizar}
         />
       ))}
     </ul>

@@ -1,4 +1,10 @@
-import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from "react";
 
 // Contexto centralizado para identidad de usuario y acciones (login/logout/cambiar lado).
 const UserContext = createContext(null);
@@ -36,7 +42,14 @@ export function UserProvider({ children }) {
   }, []);
 
   const value = useMemo(
-    () => ({ user, isAuthenticated: !!user, login, logout, setForceSide }),
+    () => ({
+      user,
+      isAuthenticated: !!user,
+      login,
+      logout,
+      setForceSide,
+      setUser,
+    }),
     [user, login, logout, setForceSide]
   );
 

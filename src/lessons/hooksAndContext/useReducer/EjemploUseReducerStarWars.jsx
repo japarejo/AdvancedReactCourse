@@ -23,6 +23,10 @@ export default function EjemploUseReducerStarWars() {
     dispatch({ type: "eliminar", payload: { id } });
   };
 
+  const rebautizar = (id, nombre) => {
+    dispatch({ type: "rebautizar", payload: { id: id, nombre: nombre } });
+  };
+
   return (
     <div
       style={{
@@ -43,6 +47,7 @@ export default function EjemploUseReducerStarWars() {
         jedis={jedis}
         onCambiarLado={cambiarLado}
         onEliminar={eliminarJedi}
+        rebautizar={rebautizar}
       />
     </div>
   );
